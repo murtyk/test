@@ -4,6 +4,6 @@ workflow "PR Checklist" {
 }
 
 action "Create PR Comment" {
-  uses = "murtyk/code-review-checklist@master"
+  uses = "cognisant/code-review-checklist@master"
   secrets = ["GITHUB_TOKEN"]
 }
