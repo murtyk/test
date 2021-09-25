@@ -1,4 +1,4 @@
-on: [pull_request_target]
+on: [pull_request]
 
 jobs:
   checklist_job:
@@ -8,7 +8,8 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v1
       - name: Checklist
-        uses: wyozi/contextual-qa-checklist-action@master
+        uses: PokaInc/pr-template-action@v1.0.0
         with:
-          gh-token: ${{ secrets.GITHUB_TOKEN }}
-          # See options documentation below
+          token: ${{ secrets.GITHUB_TOKEN }}
+          template_dir: './'
+          mapping: 'feature=feature/'
